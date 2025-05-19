@@ -5,31 +5,38 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoumare <asoumare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/29 14:17:22 by asoumare          #+#    #+#             */
-/*   Updated: 2025/05/15 22:33:44 by asoumare         ###   ########.fr       */
+/*   Created: 2025/05/19 13:21:14 by asoumare          #+#    #+#             */
+/*   Updated: 2025/05/19 14:46:03 by asoumare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
-#include "humanA.hpp"
-#include "humanB.hpp"
+#include "Sed.hpp"
 
-int main()
+int main(int ac, char** av)
 {
+    if (ac != 4)
     {
-        Weapon club = Weapon("crude spiked club");
-        HumanA bob("Bob", club);
-        bob.attack();
-        club.setType("some other type of club");
-        bob.attack();
+        std::cout << "il me faut 3 argument dont le premier doit etre un ficher !" << std::endl;
+        return (0);
     }
+
+    std::ifstream txt{av[1]};
+    std::ofstream data{"data.txt"};
+    
+    if (!txt.is_open())
     {
-        Weapon club = Weapon("crude spiked club");
-        HumanB jim("Jim");
-        jim.setWeapon(club);
-        jim.attack();
-        club.setType("some other type of club");
-        jim.attack();
+        std::cout << "ficher introuvable !" << std::endl;
+        return 0;
     }
-return 0;
+    
+    std::string test;
+    std::getline(txt >> std::ws, test);
+    
+    while (txt)
+    {
+        data << test;
+        data << '\n';
+        std::getline(txt >> std::ws, test);
+    }
+    
 }

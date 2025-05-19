@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   humanB.cpp                                         :+:      :+:    :+:   */
+/*   Sed.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoumare <asoumare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/29 14:23:00 by asoumare          #+#    #+#             */
-/*   Updated: 2025/05/15 22:35:33 by asoumare         ###   ########.fr       */
+/*   Created: 2025/05/19 13:24:00 by asoumare          #+#    #+#             */
+/*   Updated: 2025/05/19 13:56:32 by asoumare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "humanA.hpp"
+#ifndef SED_HPP
+#define SED_HPP
 
-HumanA::HumanA(std::string name, Weapon &arme)
-    : name(name), weapon(arme)
-{
-}
+#include <iostream>
+#include <fstream>
+#include <string>
 
-HumanA::~HumanA()
-{
-    std::cout << "Human destroyed !" << std::endl;
-}
 
-void HumanA::attack()
-{
-    std::cout << this->name << " " << weapon.getType() << std::endl;
-}
+#endif

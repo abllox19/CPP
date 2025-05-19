@@ -6,7 +6,7 @@
 /*   By: asoumare <asoumare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 14:26:35 by asoumare          #+#    #+#             */
-/*   Updated: 2025/04/29 15:29:05 by asoumare         ###   ########.fr       */
+/*   Updated: 2025/05/15 19:59:53 by asoumare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Weapon::Weapon(std::string str)
 {
-    this->_type = "void";
+    this->_type = str;
     std::cout << str << std::endl;
 }
 
@@ -30,5 +30,6 @@ void    Weapon::setType(std::string str)
 
 std::string &Weapon::getType(void)
 {
+    std::cout << this->_type << std::endl;
     return Weapon::_type;
 }
