@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Sed.hpp                                            :+:      :+:    :+:   */
+/*   harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoumare <asoumare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/19 13:24:00 by asoumare          #+#    #+#             */
-/*   Updated: 2025/05/20 15:17:35 by asoumare         ###   ########.fr       */
+/*   Created: 2025/05/20 15:48:24 by asoumare          #+#    #+#             */
+/*   Updated: 2025/05/20 15:58:05 by asoumare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SED_HPP
-#define SED_HPP
-
 #include <iostream>
-#include <fstream>
 #include <string>
 
-class Sed
+class harl
 {
-    private:
-        std::string txt;
-    public:
-        Sed(void);
-        ~Sed();
-        
-        void    print_in_txt(std::string str);
-        std::string get_txt(void);
-        void    repalce(char *dest, char *rep);
+private:
+    std::string txt_1;
+    std::string txt_2;
+    std::string txt_3;
+    std::string txt_4;
+
+public:
+    harl(/* args */);
+    ~harl();
+    
+    void debug( void );
+    void info( void );
+    void warning( void );
+    void error( void );
 };
 
-#endif
+

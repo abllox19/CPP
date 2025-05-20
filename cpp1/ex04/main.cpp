@@ -6,7 +6,7 @@
 /*   By: asoumare <asoumare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 13:21:14 by asoumare          #+#    #+#             */
-/*   Updated: 2025/05/19 14:46:03 by asoumare         ###   ########.fr       */
+/*   Updated: 2025/05/20 15:27:57 by asoumare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int main(int ac, char** av)
 
     std::ifstream txt{av[1]};
     std::ofstream data{"data.txt"};
+    Sed sed;
     
     if (!txt.is_open())
     {
@@ -34,9 +35,14 @@ int main(int ac, char** av)
     
     while (txt)
     {
-        data << test;
-        data << '\n';
+        sed.print_in_txt(test);
         std::getline(txt >> std::ws, test);
     }
-    
+
+    if (av[2] != av[3])
+    {
+        sed.repalce(av[2], av[3]);
+    }
+    std::cout << sed.get_txt() << std::endl;
+    data << sed.get_txt();
 }
