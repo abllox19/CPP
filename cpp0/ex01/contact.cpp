@@ -40,6 +40,8 @@ size_t strlen(std::string str)
 
 int is_num(std::string str)
 {
+    if (str == "")
+        return 0;
     for (size_t i = 0; i < strlen(str); i++)
     {
         if ((str[i] < '0' || str[i] > '9') && str[i] != ' ')
@@ -66,6 +68,11 @@ void contact::add(int i)
     {
         std::cout << "donner un numero : ";
         std::getline(std::cin, this->number);
+		if (std::cin.eof() == true)
+		{
+			std::cout << "sorti de phonebook." << std::endl;
+			break;
+		}
         if (is_num(this->number))
             break;
         std::cout << "ce n'est pas un numero !" << std::endl;

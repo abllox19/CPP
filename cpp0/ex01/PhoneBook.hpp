@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoumare <asoumare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/03 15:56:50 by asoumare          #+#    #+#             */
-/*   Updated: 2025/07/10 19:08:52 by asoumare         ###   ########.fr       */
+/*   Created: 2025/07/10 18:24:12 by asoumare          #+#    #+#             */
+/*   Updated: 2025/07/10 19:18:54 by asoumare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "contact.hpp"
-#include "PhoneBook.hpp"
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
-int main()
+#include "contact.hpp"
+#include <iostream>
+#include <string>
+#include <iomanip>
+#include <cstdlib>
+
+class PhoneBook
 {
-	PhoneBook tel;
-	tel.cmd();
-	return 0;
-}
+private:
+
+public:
+	PhoneBook(void);
+	~PhoneBook();
+	void cmd(void);
+};
+#endif

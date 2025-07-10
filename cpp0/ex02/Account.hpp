@@ -12,12 +12,15 @@
 #ifndef __ACCOUNT_H__
 #define __ACCOUNT_H__
 
+#include <iostream>
+#include <iomanip>
+#include <ctime>
+
 // ************************************************************************** //
 //                               Account Class                                //
 // ************************************************************************** //
 
 class Account {
-
 
 public:
 
@@ -53,10 +56,7 @@ private:
 	int				_nbWithdrawals;
 
 	Account( void );
-
 };
-
-
 
 // ************************************************************************** //
 // vim: set ts=4 sw=4 tw=80 noexpandtab:                                      //
@@ -64,6 +64,5 @@ private:
 // -*- mode: c++-mode;                                                       -*-
 // -*- fill-column: 75; comment-column: 75;                                  -*-
 // ************************************************************************** //
-
 
 #endif /* __ACCOUNT_H__ */
