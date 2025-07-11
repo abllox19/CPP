@@ -6,7 +6,7 @@
 /*   By: asoumare <asoumare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 15:48:36 by asoumare          #+#    #+#             */
-/*   Updated: 2025/06/30 19:32:50 by asoumare         ###   ########.fr       */
+/*   Updated: 2025/07/11 18:47:19 by asoumare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,18 +40,38 @@ void harl::error( void )
     std::cout << this->txt_4 << std::endl;
 }
 
-
-// Public Methods
 void	harl::complain(std::string level)
 {
-	void    (harl::*functionPTRS[])( void ) = {&harl::debug, &harl::info, &harl::warning, &harl::error};
+    int i;
+	// void    (harl::*functionPTRS[])( void ) = {&harl::debug, &harl::info, &harl::warning, &harl::error};
 	std::string complains[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
-	for (int i = 0; i < 4; i++)
+	for (i = 0; i < 4; i++)
 	{
 		if (complains[i] == level)
-			(this->*functionPTRS[i])();
+            break;
 	}
+    switch(i)
+    {
+        case 0:
+            harl::debug();
+            /* fall through */
+            
+        case 1:
+            harl::info();
+            /* fall through */
+
+        case 2:
+            harl::warning();
+            /* fall through */
+
+        case 3:
+            harl::error();
+            break;
+
+        default :
+            return;
+    }
 }
 
 harl::~harl()

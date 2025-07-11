@@ -5,19 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoumare <asoumare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/24 18:48:50 by asoumare          #+#    #+#             */
-/*   Updated: 2025/07/10 22:03:35 by asoumare         ###   ########.fr       */
+/*   Created: 2025/05/20 16:00:48 by asoumare          #+#    #+#             */
+/*   Updated: 2025/06/25 20:35:32 by asoumare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "harl.hpp"
 
-int	main(void)
+int main(int ac, char **av)
 {
-	int nb = 18;
-	Zombie	*horde = zombieHorde(nb, "ZZ");
 
-	for (int i = 0; i < nb; i++)
-		horde[i].announce();
-	delete [] horde;
+	if (ac != 2)
+		return 0;	
+	harl	_harl;
+	
+		_harl.complain(av[1]);
 }

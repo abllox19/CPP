@@ -6,7 +6,7 @@
 /*   By: asoumare <asoumare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 17:08:12 by asoumare          #+#    #+#             */
-/*   Updated: 2025/05/22 16:46:47 by asoumare         ###   ########.fr       */
+/*   Updated: 2025/07/11 21:12:34 by asoumare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ private:
     int nb_fixe;
 public:
     Fixed(int i);
+    Fixed(Fixed &cpy);
     ~Fixed();
 };
 

@@ -6,7 +6,7 @@
 /*   By: asoumare <asoumare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 14:52:20 by asoumare          #+#    #+#             */
-/*   Updated: 2025/05/20 15:43:55 by asoumare         ###   ########.fr       */
+/*   Updated: 2025/07/11 20:10:44 by asoumare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ void    Sed::repalce(char *dest, char *rep)
                     i += j-1;
                 }
             }
+            if (dest[j] != '\0')
+                txt += this->txt[i];
         }
         else
             txt += this->txt[i];

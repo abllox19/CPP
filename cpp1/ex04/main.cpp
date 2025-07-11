@@ -6,7 +6,7 @@
 /*   By: asoumare <asoumare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 13:21:14 by asoumare          #+#    #+#             */
-/*   Updated: 2025/05/20 15:27:57 by asoumare         ###   ########.fr       */
+/*   Updated: 2025/07/11 20:19:23 by asoumare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@ int main(int ac, char** av)
         return (0);
     }
 
-    std::ifstream txt{av[1]};
-    std::ofstream data{"data.txt"};
+    std::ifstream txt(av[1]);
+    std::ofstream data("data.txt");
     Sed sed;
+    std::cout << "creation de data.txt" << std::endl;
     
     if (!txt.is_open())
     {
@@ -38,11 +39,13 @@ int main(int ac, char** av)
         sed.print_in_txt(test);
         std::getline(txt >> std::ws, test);
     }
-
+    
+    std::cout << "copie de " << av[1] << std::endl;
+    
     if (av[2] != av[3])
     {
         sed.repalce(av[2], av[3]);
+        std::cout << "modifie les '" << av[2] << "' par '" << av[3] << "'."<< std::endl;
     }
-    std::cout << sed.get_txt() << std::endl;
     data << sed.get_txt();
 }

@@ -6,7 +6,7 @@
 /*   By: asoumare <asoumare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 17:01:52 by asoumare          #+#    #+#             */
-/*   Updated: 2025/07/11 20:52:20 by asoumare         ###   ########.fr       */
+/*   Updated: 2025/05/22 18:28:10 by asoumare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ ClapTrap::ClapTrap(std::string name)
     this->name = name;
     this->hp = 10;
     this->mp = 10;
-    this->ad = 3;
+    this->ad = 0;
     
     std::cout << "create a new player" << std::endl;
     std::cout << "name : "<< this->name << std::endl;
@@ -35,7 +35,7 @@ void ClapTrap::attack(const std::string& target)
 {
     if (this->hp < 1 || this->mp < 1)
         return;
-    this->mp--;
+    this-mp--;
     std::cout << "ClapTrap : " << this->name << " attacks " << target << ", causing " << this->ad <<" points of damage!" << std::endl;
 }
 
