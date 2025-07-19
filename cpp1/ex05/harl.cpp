@@ -6,7 +6,7 @@
 /*   By: asoumare <asoumare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 15:48:36 by asoumare          #+#    #+#             */
-/*   Updated: 2025/06/30 19:32:50 by asoumare         ###   ########.fr       */
+/*   Updated: 2025/07/12 17:41:23 by asoumare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,20 @@ void harl::error( void )
 // Public Methods
 void	harl::complain(std::string level)
 {
+    int error = 1;
 	void    (harl::*functionPTRS[])( void ) = {&harl::debug, &harl::info, &harl::warning, &harl::error};
 	std::string complains[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
 	for (int i = 0; i < 4; i++)
 	{
 		if (complains[i] == level)
-			(this->*functionPTRS[i])();
+        {
+            error = 0;
+            (this->*functionPTRS[i])();
+        }
 	}
+    if (error == 1)
+        std::cout << "command not found !" << std::endl;
 }
 
 harl::~harl()

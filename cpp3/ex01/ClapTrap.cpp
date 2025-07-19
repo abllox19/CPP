@@ -6,7 +6,7 @@
 /*   By: asoumare <asoumare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 17:01:52 by asoumare          #+#    #+#             */
-/*   Updated: 2025/05/22 18:28:10 by asoumare         ###   ########.fr       */
+/*   Updated: 2025/07/19 21:15:53 by asoumare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,26 @@ ClapTrap::~ClapTrap()
     std::cout << "the player "<< this->name << " is dead !" << std::endl;
 }
 
+ClapTrap::ClapTrap(const ClapTrap &cpy)
+{
+    *this = cpy;
+}
+
+ClapTrap &ClapTrap::operator=(const ClapTrap &rhs)
+{
+	this->name = rhs.name;
+	this->ad = rhs.ad;
+	this->hp = rhs.hp;
+	this->mp = rhs.mp;
+
+	return *this;
+}
+
 void ClapTrap::attack(const std::string& target)
 {
     if (this->hp < 1 || this->mp < 1)
         return;
-    this-mp--;
+    this->mp--;
     std::cout << "ClapTrap : " << this->name << " attacks " << target << ", causing " << this->ad <<" points of damage!" << std::endl;
 }
 
@@ -50,7 +65,7 @@ void ClapTrap::beRepaired(unsigned int amount)
     if (this->hp < 1 || this->mp < 1)
         return;
     this->hp += amount;
-    this-mp--;
+    this->mp--;
     std::cout << "ClapTrap : " << this->name << " restore " << amount <<" points of damage!" << std::endl;
 }
 

@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoumare <asoumare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/21 16:20:45 by asoumare          #+#    #+#             */
-/*   Updated: 2025/07/16 19:26:02 by asoumare         ###   ########.fr       */
+/*   Created: 2025/05/22 18:34:51 by asoumare          #+#    #+#             */
+/*   Updated: 2025/05/22 18:58:12 by asoumare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
-#include <iostream>
-
-int main( void )
+class ScavTrap
 {
-    Fixed a;
-    Fixed b( a );
-    Fixed c;
+private:
+    
+public:
+    ScavTrap(/* args */);
+    ~ScavTrap();
+};
 
-    c = b;
-    std::cout << a.getRawBits() << std::endl;
-    std::cout << b.getRawBits() << std::endl;
-    std::cout << c.getRawBits() << std::endl;
-    return 0;
+ScavTrap::ScavTrap(/* args */)
+{
 }
+
+ScavTrap::~ScavTrap()
+{
+}
+
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: asoumare <asoumare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 17:01:56 by asoumare          #+#    #+#             */
-/*   Updated: 2025/05/22 17:59:26 by asoumare         ###   ########.fr       */
+/*   Updated: 2025/07/19 21:14:17 by asoumare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ class ClapTrap
         int ad;
     public:
         ClapTrap(std::string name);
+        ClapTrap(const ClapTrap &cpy);
         ~ClapTrap();
+        ClapTrap &operator=(const ClapTrap&rhs);
         
         void attack(const std::string& target);
         void takeDamage(unsigned int amount);
