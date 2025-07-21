@@ -6,14 +6,14 @@
 #    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/30 20:05:21 by asoumare          #+#    #+#              #
-#    Updated: 2025/07/21 23:11:25 by marvin           ###   ########.fr        #
+#    Updated: 2025/07/21 23:50:05 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ScavTrap
+NAME = FragTrap
 CC = g++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = ScavTrap.cpp main.cpp ClapTrap.cpp
+SRC = FragTrap.cpp ScavTrap.cpp main.cpp ClapTrap.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
