@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                       :+:      :+:    :+:   */
+/*   cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: asoumare <asoumare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/19 21:28:16 by asoumare          #+#    #+#             */
-/*   Updated: 2025/07/21 23:15:37 by marvin           ###   ########.fr       */
+/*   Created: 2025/08/01 18:14:06 by asoumare          #+#    #+#             */
+/*   Updated: 2025/08/01 18:14:06 by asoumare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ private:
 
 public:
     Cat();
+    Cat(const Cat& other);
+    Cat&operator=(const Cat& other);
     ~Cat();
 
     void makeSound() const;

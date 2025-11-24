@@ -1,6 +1,33 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade) {}
+Bureaucrat::Bureaucrat(std::string name, int ngrade) : name(name)
+{
+    try {
+        if (ngrade < 1)
+            GradeTooHighException();
+        if (ngrade > 150)
+            GradeTooLowException();
+
+        grade = ngrade;
+    }
+    catch (const std::exception& e) {
+        std::cerr << "Erreur : " << e.what() << std::endl;
+        throw; // en général on relance l’exception
+    }
+}
+
+Bureaucrat::Bureaucrat(const Bureaucrat& other)
+    : name(other.name), grade(other.grade)
+{
+}
+
+
+Bureaucrat &Bureaucrat::operator=(const Bureaucrat &rhs)
+{
+	this->grade = rhs.grade;
+
+	return *this;
+}
 
 Bureaucrat::~Bureaucrat() {}
 
@@ -19,22 +46,44 @@ int Bureaucrat::get_grade(void)
 
 void Bureaucrat::upgrade()
 {
+    try
+    {
+        if (grade - 1 < 1)
+            GradeTooHighException();
 
+        grade--;
+    }
+    catch (const std::exception& e) {
+        std::cerr << "Erreur : " << e.what() << std::endl;
+    }
 }
 
 void Bureaucrat::downgrade()
 {
-    
+    try
+    {
+        if (grade + 1 > 150)
+            GradeTooLowException();
+
+        grade++;
+    }
+    catch (const std::exception& e) {
+        std::cerr << "Erreur : " << e.what() << std::endl;
+    }
 }
-
-
 
 void Bureaucrat::GradeTooHighException()
 {
-    std::cout << "votre grade ne peux pas augmenter" << std::endl;
+    throw std::out_of_range("votre grade ne peux pas etre superieur a 1");
 }
 
 void Bureaucrat::GradeTooLowException()
 {
-    std::cout << "votre grade ne peux pas diminuer" << std::endl;
+    throw std::out_of_range("votre grade ne peux pas inferieur a 150");
+}
+
+std::ostream &operator<<(std::ostream& os, Bureaucrat& rhs)
+{
+    os << "bureaucrat name : " << rhs.get_name() << " | bureaucrat grade : " << rhs.get_grade();
+    return os;
 }

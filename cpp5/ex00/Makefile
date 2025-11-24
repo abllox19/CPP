@@ -6,14 +6,14 @@
 #    By: asoumare <asoumare@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/30 20:05:21 by asoumare          #+#    #+#              #
-#    Updated: 2025/07/19 21:09:13 by asoumare         ###   ########.fr        #
+#    Updated: 2025/11/17 19:03:17 by asoumare         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ClapTrap
-CC = g++
+NAME = Bureaucrat
+CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = main.cpp ClapTrap.cpp
+SRC = main.cpp Bureaucrat.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)

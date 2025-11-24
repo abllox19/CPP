@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Wronganimal.hpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asoumare <asoumare@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/01 18:15:44 by asoumare          #+#    #+#             */
+/*   Updated: 2025/08/01 18:15:44 by asoumare         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef WRONGANIMAL_HPP
 #define WRONGANIMAL_HPP
 
@@ -13,7 +25,7 @@ public:
     WrongAnimal();
     WrongAnimal(std::string type);
     WrongAnimal(const WrongAnimal &cpy);
-    ~WrongAnimal();
+    virtual ~WrongAnimal();
 
     WrongAnimal &operator=(const WrongAnimal&rhs);
 

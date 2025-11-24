@@ -6,7 +6,7 @@
 /*   By: asoumare <asoumare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 17:08:06 by asoumare          #+#    #+#             */
-/*   Updated: 2025/07/19 16:29:51 by asoumare         ###   ########.fr       */
+/*   Updated: 2025/11/17 19:00:46 by asoumare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ Fixed &Fixed::operator=(const Fixed &rhs)
 	this->nb_fixe = rhs.getRawBits();
 	return *this;
 }
-
+w
 Fixed::~Fixed()
 {
     // std::cout << "Destructor called" << std::endl;

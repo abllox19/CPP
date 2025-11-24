@@ -28,3 +28,5 @@ public:
     void GradeTooHighException(void);
     void GradeTooLowException(void);
 };
+
+std::ostream &operator<<(std::ostream& os, Bureaucrat& rhs);

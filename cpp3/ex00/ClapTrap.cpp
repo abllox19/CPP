@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: asoumare <asoumare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 17:01:52 by asoumare          #+#    #+#             */
-/*   Updated: 2025/07/21 22:49:14 by marvin           ###   ########.fr       */
+/*   Updated: 2025/07/22 21:07:33 by asoumare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 ClapTrap::ClapTrap(std::string name) : name(name), hp(10), mp(10), ad(0)
 {
+    std::cout << "default constructor called" << std::endl;
+
     std::cout << "create a new player" << std::endl;
     std::cout << "name : "<< this->name << std::endl;
     std::cout << "healing points : "<< this->hp << std::endl;

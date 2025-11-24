@@ -1,0 +1,75 @@
+#include "more_form.hpp"
+#include "Bureaucrat.hpp"
+
+
+ShrubberyCreationForm::ShrubberyCreationForm(std::string name) : Form(name, 145, 137)
+{
+}
+
+ShrubberyCreationForm::~ShrubberyCreationForm()
+{
+}
+
+void ShrubberyCreationForm::run_forms(Bureaucrat client)
+{
+    if (!get_is_sign() || get_sign_by() != client.get_name())
+        throw std::out_of_range("vous n'avez pas signer ce contrat");
+    if (client.get_grade() > get_lvl_run())
+        client.GradeTooLowException();
+
+    std::cout << client.get_name() << " execute " << get_name() << std::endl;
+
+    std::string m = client.get_name() + "_shrubbery";
+    std::ofstream data(m.c_str());
+    data << "          /\\\n         /**\\\n        /****\\\n       /******\\\n      /********\\\n     /**********\\\n    /************\\\n        ||||\n        ||||\n        ||||";
+}
+
+
+
+RobotomyRequestForm::RobotomyRequestForm(std::string name) : Form(name, 72, 45)
+{
+}
+
+RobotomyRequestForm::~RobotomyRequestForm()
+{
+}
+
+void RobotomyRequestForm::run_forms(Bureaucrat client)
+{
+    if (!get_is_sign() || get_sign_by() != client.get_name())
+        throw std::out_of_range("vous n'avez pas signer ce contrat");
+    if (client.get_grade() > get_lvl_run())
+        client.GradeTooLowException();
+
+    std::cout << client.get_name() << " execute " << get_name() << std::endl;
+    
+    std::srand(std::time(0));
+    int random = std::rand();
+    if (random % 2)
+		std::cout << "BRRRRRRRRRRRRRR\n" << client.get_name() << " was robotomized" << std::endl;
+	else
+		std::cout << "Robotomy failed" << std::endl;
+}
+
+
+
+PresidentialPardonForm::PresidentialPardonForm(std::string name) : Form(name, 25, 5)
+{
+}
+
+PresidentialPardonForm::~PresidentialPardonForm()
+{
+}
+
+
+void PresidentialPardonForm::run_forms(Bureaucrat client)
+{
+    if (!get_is_sign() || get_sign_by() != client.get_name())
+        throw std::out_of_range("vous n'avez pas signer ce contrat");
+    if (client.get_grade() > get_lvl_run())
+        client.GradeTooLowException();
+
+    std::cout << client.get_name() << " execute " << get_name() << std::endl;
+
+    std::cout << client.get_name() << " has been pardoned by Zaphod Beeblebrox" << std::endl;
+}

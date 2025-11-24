@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: asoumare <asoumare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 21:28:16 by asoumare          #+#    #+#             */
-/*   Updated: 2025/07/21 23:15:37 by marvin           ###   ########.fr       */
+/*   Updated: 2025/07/22 20:43:25 by asoumare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <iostream>
 #include <string>
 
-class ScavTrap : public ClapTrap
+class ScavTrap : public virtual ClapTrap
 {
 public:
     ScavTrap(std::string name);

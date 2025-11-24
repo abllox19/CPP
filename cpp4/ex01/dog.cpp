@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   dog.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asoumare <asoumare@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/01 18:14:21 by asoumare          #+#    #+#             */
+/*   Updated: 2025/08/01 18:14:21 by asoumare         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "dog.hpp"
 
 Dog::Dog(void) : Animal("chien")
@@ -6,8 +18,26 @@ Dog::Dog(void) : Animal("chien")
     std::cout << "petit chien debloquer" << std::endl;
 }
 
+Dog::Dog(const Dog& other) : Animal(other)
+{
+    brain = new Brain(*other.brain);
+    std::cout << "petit chien debloquer" << std::endl;
+}
+
+Dog& Dog::operator=(const Dog& other)
+{
+    std::cout << "Dog copy assignment" << std::endl;
+    if (this != &other) {
+        Animal::operator=(other);
+        delete brain;
+        brain = new Brain(*other.brain);
+    }
+    return *this;
+}
+
 Dog::~Dog(void)
 {
+    if (brain) delete brain;
     std::cout << "petit chien perdu" << std::endl;
 }
 

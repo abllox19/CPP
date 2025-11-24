@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#    By: asoumare <asoumare@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/30 20:05:21 by asoumare          #+#    #+#              #
-#    Updated: 2025/07/21 23:50:05 by marvin           ###   ########.fr        #
+#    Updated: 2025/07/22 20:40:51 by asoumare         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = FragTrap
+NAME = DiamondTrap
 CC = g++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = FragTrap.cpp ScavTrap.cpp main.cpp ClapTrap.cpp
+SRC = FragTrap.cpp ScavTrap.cpp main.cpp ClapTrap.cpp DiamondTrap.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)

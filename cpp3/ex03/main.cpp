@@ -3,16 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: asoumare <asoumare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 17:49:31 by asoumare          #+#    #+#             */
-/*   Updated: 2025/07/21 23:52:40 by marvin           ###   ########.fr       */
+/*   Updated: 2025/07/22 21:19:08 by asoumare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
+
+int main()
+{
+    DiamondTrap a("joueur");
+    a.whoAmI();
+    a.attack("a monster");
+    a.takeDamage(a.get_ad());
+    a.guardGate();
+    a.beRepaired(10);
+
+    std::cout << "mp : " << a.get_mp() << std::endl;
+    std::cout << "hp : " << a.get_hp() << std::endl;
+    
+}
 /*
 int main()
 {
@@ -51,8 +66,4 @@ int main()
 }
 */
 
-int main()
-{
-    FragTrap a("FragTrap");
-}
     
