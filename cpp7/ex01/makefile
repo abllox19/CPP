@@ -6,14 +6,14 @@
 #    By: asoumare <asoumare@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/01 19:41:34 by asoumare          #+#    #+#              #
-#    Updated: 2025/12/08 19:11:01 by asoumare         ###   ########.fr        #
+#    Updated: 2025/12/08 20:27:28 by asoumare         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = whatever
+NAME = iter
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-HEADER = whatever.hpp
+HEADER = iter.hpp
 SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
 
