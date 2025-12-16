@@ -4,7 +4,7 @@
 #include <string>
 
 template<typename S, typename T>
-void iter(S tab[], size_t size,  void (*f)(T))
+void iter(S *tab, size_t size,  void (*f)(T))
 {
     if (size < 1)
         return ;
