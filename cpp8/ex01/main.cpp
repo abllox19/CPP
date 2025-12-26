@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asoumare <asoumare@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abllox <abllox@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 20:59:19 by asoumare          #+#    #+#             */
-/*   Updated: 2025/12/16 22:28:23 by asoumare         ###   ########.fr       */
+/*   Updated: 2025/12/25 20:10:49 by abllox           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 int main()
 {
     std::string  t = " sddsnfkc";
-    Span a(5);
+    unsigned int r = 50;
+    Span a(r);
     
-    a.addNumber(1);
-    a.addNumber(2);
-    a.addNumber(3);
-    a.addNumber(4);
-    a.addNumber(5);
-    a.addNumber(5);
+    a.addNumber(9,15);
     
-    std::cout << a.get_tab()<< std::endl;
+    std::vector<int> tab = a.get_tab();
+    for (size_t i = 0; i < tab.size(); i++)
+        std::cout << tab[i] << std::endl;
+    std::cout << a.shortestSpan() << std::endl;
+    std::cout << a.longestSpan() << std::endl;
 }

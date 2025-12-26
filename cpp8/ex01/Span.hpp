@@ -1,5 +1,6 @@
 #pragma once
 
+#include <algorithm>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -12,12 +13,15 @@ private:
 
 public:
     Span();
-    Span(int i);
+    Span(unsigned int i);
     ~Span();
 
-    int *get_tab(void);
+    std::vector<int> get_tab(void);
 
     void addNumber(int i);
+    void addNumber(int begin, int end);
+    int shortestSpan();
+    int longestSpan();
 };
 
 

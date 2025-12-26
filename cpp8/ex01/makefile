@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: asoumare <asoumare@student.42.fr>          +#+  +:+       +#+         #
+#    By: abllox <abllox@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/01 19:41:34 by asoumare          #+#    #+#              #
-#    Updated: 2025/12/16 21:51:05 by asoumare         ###   ########.fr        #
+#    Updated: 2025/12/25 18:18:03 by abllox           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Easyfind
-CC = c++
+NAME = Span
+CC = g++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 HEADER = Span.hpp
 SRC = main.cpp Span.cpp
